@@ -1,27 +1,41 @@
 apply plugin: 'com.android.library'
 
 android {
-    compileSdkVersion 25
-    buildToolsVersion "25.0.2"
+    compileSdkVersion versions.compileSdk
+    buildToolsVersion versions.buildTools
 
     defaultConfig {
-        minSdkVersion 16
-        targetSdkVersion 25
+        minSdkVersion versions.minSdk
+        targetSdkVersion versions.targetSdk
+
         versionCode 1
         versionName "1.0"
     }
+
     buildTypes {
+        debug {}
+        qa {}
+        fox {}
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
+        sourceSets {}
+        splits {}
+    }
+
+    lintOptions {
+        abortOnError false
     }
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
-    testCompile 'junit:junit:4.12'
-    compile 'com.android.support:appcompat-v7:25.3.1'
-    compile 'com.facebook.react:react-native:+' // support react-native-v0.22-rc+
-    compile('com.facebook.android:facebook-android-sdk:4.+')
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation 'com.facebook.react:react-native:+'
+
+    implementation libraries.facebookSdk
+    implementation libraries.supportAppCompatv7
+
+    testImplementation 'junit:junit:4.12'
 }

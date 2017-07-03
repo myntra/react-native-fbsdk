@@ -34,7 +34,7 @@ import java.util.List;
 
 public class FBSDKPackage implements ReactPackage {
 
-    public static final String VERSION_TO_RELEASE = "ReactNative-v0.5.0";
+    public static final String VERSION_TO_RELEASE = "ReactNative-v0.6.1";
 
     private CallbackManager mCallbackManager;
     public FBSDKPackage(CallbackManager callbackManager) {
@@ -56,11 +56,6 @@ public class FBSDKPackage implements ReactPackage {
                 new FBShareAPIModule(reactContext),
                 new FBShareDialogModule(reactContext, mCallbackManager)
         );
-    }
-
-    @Override
-    public List<Class<? extends JavaScriptModule>> createJSModules() {
-        return Collections.emptyList();
     }
 
     @Override

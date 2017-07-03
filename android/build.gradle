@@ -1,5 +1,19 @@
 apply plugin: 'com.android.library'
 
+buildscript {
+    repositories {
+        maven { url "$projectDir/../../react-native/android" }
+        mavenLocal()
+        mavenCentral()
+        jcenter()
+    }
+}
+repositories {
+    maven {
+        url "$projectDir/../../react-native/android"
+    }
+}
+
 android {
     compileSdkVersion versions.compileSdk
     buildToolsVersion versions.buildTools

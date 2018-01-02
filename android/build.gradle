@@ -34,7 +34,10 @@ dependencies {
 
     implementation 'com.facebook.react:react-native:+'
 
-    implementation libraries.facebookSdk
+    implementation libraries.fbCore
+    implementation libraries.fbLogin
+    implementation libraries.fbShare
+    
     implementation libraries.supportAppCompatv7
 
     testImplementation 'junit:junit:4.12'

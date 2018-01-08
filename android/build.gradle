@@ -42,3 +42,12 @@ dependencies {
 
     testImplementation 'junit:junit:4.12'
 }
+
+repositories {
+    mavenCentral()
+    jcenter()
+    maven {
+        url 'https://maven.google.com/'
+        name 'Google'
+    }
+}
